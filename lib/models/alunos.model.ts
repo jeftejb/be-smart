@@ -48,6 +48,20 @@ const alunosSchema = new mongoose.Schema({
     type:Number
   },
 
+  faltas:[
+    {
+      numero:{type: Number},
+      data:{type: Date}
+    }
+  ],
+
+  professores:[
+    {
+      type:mongoose.Schema.ObjectId,
+      ref:"Funcionarios"
+    }
+  ],
+
   propina: [
     {
       type: mongoose.Schema.Types.ObjectId,

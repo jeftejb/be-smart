@@ -31,7 +31,14 @@ export default function RootLayout({
     </head>
       <body className={inter.className}>
         <Nav/>
-        {children}
+        <main className=''>
+          <section className=' relative w-full h-full '>
+            <div className='relative h-full w-full'>
+              {children}
+            </div>
+          </section>
+          
+        </main>
         <Footer/>
         
         <script type="text/javascript" src="./js/app.js"></script>

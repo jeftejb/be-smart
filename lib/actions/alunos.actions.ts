@@ -50,7 +50,8 @@ interface Params {
   }: Params): Promise<void> {
     try {
       connectToDB();
-       const data = new Date()
+      // const data = new Date()
+    
      const alunos =  await Alunos.find();
      const numeroDeEstudante = 2024 + alunos.length
 

@@ -24,7 +24,13 @@ interface Props{
 
 */
 
-export default function FormMatriculaAdmin(){
+interface Props{
+    admin:boolean;
+    email:string;
+    id:string
+}
+
+export default function FormMatriculaAdmin({admin, email, id}:Props){
     const pathname = usePathname();
     const [dados , setDados] = useState({});
 
@@ -35,14 +41,15 @@ export default function FormMatriculaAdmin(){
         })
     }
 
+
     const handelSubmit = async (e:any)=>{
         e.preventDefault();
 
        await updateAluno(
         {
-            userId: dadosAluno?.id,
-            nomeCompleto:dados?.nome||"", 
-            email:dados?.email||"",
+            userId: id,
+            nomeCompleto:dados?.nomeCompleto||"", 
+            email:email||"",
             imagem: dados?.imagem||"",
             telefone:dados?.telefone||0,
             dataNascimento:dados?.dataNascimento||"",
@@ -53,6 +60,7 @@ export default function FormMatriculaAdmin(){
         }
        )
     }
+  
 
     return(
         <div className="relative w-[100%] flex p-9">
@@ -61,24 +69,24 @@ export default function FormMatriculaAdmin(){
             <form onSubmit={(e)=>handelSubmit(e)}  data-aos='fade-down' className="flex flex-col  text-[#000] p-20 w-full  justify-center items-center ">
                 <div className="w-full flex px- gap-9">
                 <input  className="p-2 mb-4 rounded-3xl hover:scale-110 transi w-[100%] bg-transparent border border-fuchsia-300 text-white" type="text" name="nomeCompleto" onChange={(e)=>handelChange(e)}  placeholder="Nome Completo"/>
-                <input className="p-2 mb-4 rounded-3xl hover:scale-110 w-[100%] bg-transparent border border-fuchsia-300 text-white" type="email" name="email"  placeholder="Email" onChange={(e)=>handelChange(e)} id="" />
+                <input className="p-2 mb-4 rounded-3xl hover:scale-110 w-[100%] bg-transparent border border-fuchsia-300 text-white" type="email" name="email"  placeholder="Email" value={email}  disabled id="" />
                 </div>
 
                 <div className="w-full flex px- gap-9">
                 <input className="p-2 mb-4 rounded-3xl hover:scale-110 w-[100%] bg-transparent border border-fuchsia-300 text-white" type="date" name="dataNascimento" onChange={(e)=>handelChange(e)} placeholder="Data de nascimento"/>
-                <select className="p-2 mb-4 rounded-3xl hover:scale-110 w-[100%] bg-transparent border border-fuchsia-300 text-white" name="sexo" onChange={(e)=>handelChange(e)} id="">
-                <option className="p-2 mb-4 rounded-3xl hover:scale-110 w-[100%] bg-transparent border border-fuchsia-300 text-white" value="" disabled >Sexo</option>
-                <option className="p-2 mb-4 rounded-3xl hover:scale-110 w-[100%] bg-transparent border border-fuchsia-300 text-white" value="Masculino">Masculino</option>
-                <option className="p-2 mb-4 rounded-3xl hover:scale-110 w-[100%] bg-transparent border border-fuchsia-300 text-white" value="Femenino">Femenino</option>
+                <select className="p-2 mb-4 rounded-3xl hover:scale-110 w-[100%] bg-black border border-fuchsia-300 text-white" name="sexo" onChange={(e)=>handelChange(e)} id="">
+                <option className="p-2 mb-4 rounded-3xl hover:scale-110 w-[100%] bg-black border border-fuchsia-300 text-white" value=""  >Sexo</option>
+                <option className="p-2 mb-4 rounded-3xl hover:scale-110 w-[100%] bg-black border border-fuchsia-300 text-white" value="Masculino">Masculino</option>
+                <option className="p-2 mb-4 rounded-3xl hover:scale-110 w-[100%] bg-black border border-fuchsia-300 text-white" value="Femenino">Femenino</option>
                 </select>
                 </div>
                 
                 <div className="w-full flex px- gap-9">
                 <select className="p-2 mb-4 rounded-3xl hover:scale-110 w-[100%] bg-transparent border border-fuchsia-300 text-white" onChange={(e)=>handelChange(e)} name="nivel" id="">
-                <option className="p-2 mb-4 rounded-3xl hover:scale-110 w-[100%] bg-transparent border border-fuchsia-300 text-white" disabled >Nivel</option>
-                <option className="p-2 mb-4 rounded-3xl  w-[100%] bg-transparent border border-fuchsia-300 text-white bg-black" value="Iniciante">Iniciante</option>
-                <option className="p-2 mb-4 rounded-3xl  w-[100%] bg-transparent border border-fuchsia-300 text-white bg-black " value="Intermediario">Intermedio</option>
-                <option className="p-2 mb-4 rounded-3xl  w-[100%] bg-transparent border border-fuchsia-300 text-white bg-black" value="Avancado">Avancado</option>
+                <option className="p-2 mb-4 rounded-3xl hover:scale-110 w-[100%] bg-black border border-fuchsia-300 text-white" >Nivel</option>
+                <option className="p-2 mb-4 rounded-3xl  w-[100%]  border border-fuchsia-300 text-white bg-black" value="Iniciante">Iniciante</option>
+                <option className="p-2 mb-4 rounded-3xl  w-[100%]  border border-fuchsia-300 text-white bg-black " value="Intermediario">Intermedio</option>
+                <option className="p-2 mb-4 rounded-3xl  w-[100%]  border border-fuchsia-300 text-white bg-black" value="Avancado">Avancado</option>
                 </select>
                  
                <input className="p-2 mb-4 rounded-3xl hover:scale-110 w-[100%] bg-transparent border border-fuchsia-300 text-white" type="number" name="telefone"  onChange={(e)=>handelChange(e)} placeholder="Telefone" id="" />
@@ -96,9 +104,10 @@ export default function FormMatriculaAdmin(){
                 </div>
                </div>
 
+
+             { admin && admin==true? 
+             <>
                <h1 className="text-center text-white font-medium my-8">Pagamento</h1>
-
-
                <div className="w-full flex px- gap-9">
                  
                <select className="p-2 mb-4 rounded-3xl hover:scale-110 w-[100%] bg-transparent border border-fuchsia-300 text-white bg-black" onChange={(e)=>handelChange(e)} name="modeloPagamento" id="">
@@ -126,7 +135,9 @@ export default function FormMatriculaAdmin(){
              
 
                 </div>
-              
+                </>
+                : ""
+}
 
                  {/* Mostrar o valor de pagamento incluindo o  valor da matricula */}
 

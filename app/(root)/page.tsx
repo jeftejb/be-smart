@@ -8,7 +8,7 @@ export default function Home() {
    <>
    <main id="hero-section">
     <div id="backg" >
-      <img id="nav-img" src="img/img5.jpg" alt="" />
+      <img id="nav-img" src="img/img5.jpg" className="object-cover h-full w-full" alt="" />
     </div>
 
      <div data-aos="fade-up">

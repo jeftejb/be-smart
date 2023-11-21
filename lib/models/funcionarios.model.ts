@@ -58,6 +58,21 @@ const funcionariosSchema = new mongoose.Schema({
  funcoes : [{
     type:String
  }],
+
+ linkAula:[
+  {
+    link:{type:String},
+    nivel:{type:String}
+  }
+],
+
+ horario:[
+  {
+    periodo:{type:String},
+    hora:{type:String}
+  }
+],
+
   createdAt: {
     type: Date,
     default: Date.now,

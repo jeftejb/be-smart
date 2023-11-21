@@ -7,11 +7,11 @@ interface Props{
 }
 const AdminItem = ({id}:Props)=>{
     return(
-        <div className="w-full mt-9 grid grid-cols-3 grid-rows-2 px-60 py-20 gap-9 justify-center items-center ">
+        <div className="w-full mt-9 grid grid-cols-3 max-sm:grid-cols-1 max-md:grid-cols-2 grid-rows-2 px-10 py-20 gap-4 justify-center items-center ">
         {
             adminItens.map((item , index)=>(
              
-                <Link href={`${item.link}/${id}`}>
+                <Link href={`${item.link}/${id}`} className='w-full h-full'>
                 <div key={index} className='shadow-2xl shadow-pink-300' id='service-card' data-aos='fade-up' >
                 <div id='service-circle' ></div>
                 <svg id='icon-service' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-16 h-16">

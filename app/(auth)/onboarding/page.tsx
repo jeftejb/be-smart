@@ -1,12 +1,17 @@
 
 import FormMatriculaAdmin from "@/components/FormMatriculaAdmin";
+import FormMatricula from "@/components/formMatricula";
 //import AccountProfile from "@/components/forms/AccountProfile";
 import { fetchAluno } from "@/lib/actions/alunos.actions";
 import { fetchFuncionario } from "@/lib/actions/funcionarios.actions";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
-async function Page() {
+interface Props{
+    admin:boolean
+}
+
+async function Page({admin}:Props) {
     const user = await currentUser();
     if(!user) return null;
     const alunoInfo = await fetchAluno(user.id);
@@ -35,9 +40,12 @@ if(!funcionarios){
             </p>
 
             <section className="mt-4 bg-dark-2 p-3">
+               
+                
             <div>
-           <FormMatriculaAdmin/>
+           <FormMatriculaAdmin admin={admin} email={user?.emailAddresses[0].emailAddress} id={user?.id}/>
            </div>
+                
 
             </section>
         </main>
