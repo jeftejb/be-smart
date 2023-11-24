@@ -56,17 +56,12 @@ body{
 
 
 ul{
-  display: flex;
-  align-items: center;
-  justify-items: start;
-  margin-left: 60px;
   list-style: none;
-  padding: 15px 0;
 }
 
 
 li{
-  margin: 0 10px;
+
   transition: .5s;
 }
 

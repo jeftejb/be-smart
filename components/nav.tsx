@@ -14,7 +14,7 @@ const {userId} = useAuth()
         <nav className="nav flex ">
         <ul className="flex w-full  max-sm:px-[5px] ">
           <li className="max-sm:text-xl max-sm:mx-[2px]" ><a href="/">Home</a></li>
-          <li><a href="/curso" className="text-white " >Cursos</a></li>
+          <li><a href="/cursos" className="text-white " >Cursos</a></li>
           <li><a href="/sobre" className="">Sobre</a></li>
           <li><a href={`/perfil/${userId}`} className="">Perfil</a></li>
           
