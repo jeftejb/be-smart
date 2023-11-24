@@ -101,9 +101,94 @@ export default function Home() {
     </div>
 
 
-    <div className="w-full h-full ">
+<div className="relative  w-full h-full items-center justify-center ">
+  <div className="w-full h-full mt-16 justify-center items-center p-16 ">
+  <h1 className="text-center font-bold text-2xl">Receba ajuda a tempo real!</h1>
+  <span className="font-bold mt-4">Caso precise de um serviço de interpretação ou tirar alguma divida entre em contato com os nossos profissionais </span>
+  </div>
+    <div className="w-full h-full  mt-10 grid grid-cols-4 gap-4 ">
+      
+
+        <div className="relative w-full h-[10vh] flex bg-black items-center  pr-0 mr-0 rounded-l-full hover:scale-110 duration-100 ">
+            <div className="relative rounded-full w-[100px] h-[100px] flex flex-row mr-2">
+              <Image
+              src={"/assets/chi.jpg"}
+              alt="interprete"
+              fill
+              className="object-cover rounded-full"
+              />
+            </div>
+
+            <div className="flex flex-col">
+              <h1 className="font-bold text-xl">Chiloia</h1>
+                <span className="flex">
+                Entre em contato  
+                <div className="relative rounded-full w-[14px] h-[14px] bg-green-500 ml-2 mt-2 "/>
+                  </span>
+              </div>
+        </div>
+
+        <div className="relative w-full h-[10vh] flex bg-black items-center  pr-0 mr-0 rounded-l-full hover:scale-110 duration-100 ">
+            <div className="relative rounded-full w-[100px] h-[100px] flex flex-row mr-2">
+              <Image
+              src={"/assets/vi.jpg"}
+              alt="interprete"
+              fill
+              className="object-cover rounded-full"
+              />
+            </div>
+
+            <div className="flex flex-col">
+              <h1 className="font-bold text-xl">Victor</h1>
+                <span className="flex">
+                Entre em contato  
+                <div className="relative rounded-full w-[14px] h-[14px] bg-green-500 ml-2 mt-2 "/>
+                  </span>
+              </div>
+        </div>
+
+        <div className="relative w-full h-[10vh] flex bg-black items-center  pr-0 mr-0 rounded-l-full hover:scale-110 duration-100 ">
+            <div className="relative rounded-full w-[100px] h-[100px] flex flex-row mr-2">
+              <Image
+              src={"/assets/jo.jpg"}
+              alt="interprete"
+              fill
+              className="object-cover rounded-full"
+              />
+            </div>
+
+            <div className="flex flex-col">
+              <h1 className="font-bold text-xl">Josias</h1>
+                <span className="flex">
+                Entre em contato  
+                <div className="relative rounded-full w-[14px] h-[14px] bg-green-500 ml-2 mt-2 "/>
+                  </span>
+              </div>
+        </div>
+
+        <div className="relative w-full h-[10vh] flex bg-black items-center  pr-0 mr-0 rounded-l-full hover:scale-110 duration-100 ">
+            <div className="relative rounded-full w-[100px] h-[100px] flex flex-row mr-2">
+              <Image
+              src={"/assets/ha.jpg"}
+              alt="interprete"
+              fill
+              className="object-cover rounded-full"
+              />
+            </div>
+
+            <div className="flex flex-col">
+              <h1 className="font-bold text-xl">Hamuyela</h1>
+                <span className="flex">
+                Entre em contato  
+                <div className="relative rounded-full w-[14px] h-[14px] bg-green-500 ml-2 mt-2 "/>
+                  </span>
+              </div>
+        </div>
+
 
     </div>
+    </div>
+
    </div>
    </section>
 
