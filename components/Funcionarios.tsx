@@ -4,7 +4,7 @@ import FuncionariosSlide from './FuncionariosSlide'
 function Funcionarios() {
   return (
     <div>
-           <div className='bg-[#02050a] pt-[4rem] md:pt-[8rem] pb-[0rem]'>
+           <div className='bg-[#02050a] pt-[4rem] px-4 md:pt-[8rem] pb-[0rem]'>
            <h1 className="titulos uppercase">
             <span className="text-[#80BF21]">
               Funcionarios - 

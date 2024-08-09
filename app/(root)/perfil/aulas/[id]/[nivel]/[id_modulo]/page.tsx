@@ -19,15 +19,15 @@ export default async function Page({params}:{params:{id:string,nivel:string, id_
  
     return(
 
-        <section className="relative flex w-full h-full top-0 left-0 ">
+        <div className='bg-[#121212] flex flex-col pt-[4rem] md:pt-[8rem] pb-[5rem] items-center justify-center'>
+        <div className="relative flex flex-col rounded-xl  max-sm:mt-[2rem] bg-[#00303C] w-[90%]">
+     
 
-        <div className="relative flex flex-col mt-[200px] max-sm:mt-[150px] w-full items-center justify-center ">
-
-            <h1 className="my-10 max-sm:my-4 uppercase lg:text-[18px] md:text-[18px] max-sm:text-[24px] font-bold">Aulas de nivel: <span className="text-xl text-green-500" >{params.nivel}</span></h1>
+            <h1 className="my-10 max-sm:my-4 text-center uppercase lg:text-[18px] md:text-[18px] max-sm:text-[24px] font-bold">Aulas de nivel: <span className="text-xl text-green-500" >{params.nivel}</span></h1>
 
         
 
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 max-sm:grid-cols-2 gap-[2rem] max-sm:gap-[1.5rem] max-sm:mx-[0px] w-[90%] mx-auto p-[2rem] max-sm:p-[1.5rem] rounded-xl bg-[#038C73]">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 max-sm:grid-cols-2 gap-[2rem] max-sm:gap-[1.5rem] max-sm:mx-[0px] w-[100%] mx-auto p-[2rem] max-sm:p-[1.5rem] rounded-xl bg-[#038C73]">
             
            {
             aulas.map((items:any, key:any)=>(
@@ -41,7 +41,8 @@ export default async function Page({params}:{params:{id:string,nivel:string, id_
 
         </div>
          </div>
-        </section>
+      
+        </div>
     )
 
 }

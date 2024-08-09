@@ -16,7 +16,9 @@ const alunosSchema = new mongoose.Schema({
   email: {
     type: String,
   },
-
+  emailEncarregado: {
+    type: String,
+  },
   nivel: {
     type: String,
   },
@@ -73,6 +75,12 @@ const alunosSchema = new mongoose.Schema({
       ref: "Propina",
     },
   ],
+  encrregado:[
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Encarregado",
+    },
+  ],
   
   aulas:[
     {
@@ -97,6 +105,17 @@ const alunosSchema = new mongoose.Schema({
     type:Boolean,
     default:false,
   },
+
+  statoPropina:{
+    type:String,
+    default:"Em analise",
+  },
+  
+  vinculed:{
+    type:Boolean,
+    default:false
+    },
+  
 
   createdAt: {
     type: Date,

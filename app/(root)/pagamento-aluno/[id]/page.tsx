@@ -55,7 +55,8 @@ export default async function PagamentoAluno({params}:{params:{id:string}}){
                       id={aluno?._id} 
                       data={aluno?.dataNascimento} 
                       numeroDeEstudante={aluno?.numeroDeEstudante} 
-                      totalMesesPagos={varipass} 
+                      totalMesesPagos={varipass}
+                      imagem={""} 
                       anoInscricao     = {JSON.stringify(aluno?.anoInscricao)}
                       anoConfirmacao   = { JSON.stringify(aluno?.anoConfirmacao)}
                       mesDeConfirmacao = {JSON.stringify(aluno?.mesDeConfirmacao)}

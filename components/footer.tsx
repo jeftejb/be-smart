@@ -3,7 +3,7 @@ import { DevicePhoneMobileIcon, EnvelopeOpenIcon, MapIcon } from "@heroicons/rea
 
 export default function Footer(){
     return(
-       <footer className="relative pt-[8rem] mt-[2rem] pb-[4rem] bg-[#0205a] bg-[#02050a] ">
+       <footer className="relative pt-[8rem]  pb-[4rem] bg-[#0205a] bg-[#02050a] ">
         <div className=" grid border-b-[1px] bp-[6rem] border-gray-400 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 w-[80%] mx-auto gap-[3rem]">
            
            <div className="flex items-center space-x-6">

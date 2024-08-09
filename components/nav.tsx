@@ -87,7 +87,7 @@ window.addEventListener('scroll', ()=>{
         </div>
      : 
 
-     <nav  className="nav sticky z-[1000000] flex overflow-hidden w-full shadow-md ">
+     <nav  className="nav sticky z-[1000000] bg-black/10 backdrop-blur-md flex overflow-hidden w-full shadow-md ">
       <div className="flex items-center justify-between w-[80%] mx-auto h-[100%]">
         <Link href={"/"}>
         <h1 className="flex-[0.6] cursor-pointer text-[25px] text-[#03A678] font-bold">

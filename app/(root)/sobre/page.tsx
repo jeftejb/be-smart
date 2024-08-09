@@ -48,9 +48,9 @@ export default function Sobre(){
                        
                     </p>
                     <ul className="w-[100%] flex flex-col gap-[.5rem] mt-4">
-                            <li>1- Efectuar transferencia para obter o comprovativo</li>
-                            <li>2- Efectuar entrar no site , faça login e entre no seu perfil.</li>
-                            <li>3- Efectuar entrar no site , faça login e entre no seu perfil.</li>
+                            <li>1- Ter uma conta de encarregado.</li>
+                            <li>2- Baixar o aplicativo.</li>
+                            <li>3- Enviar a solicitação de pagamento por intermedio do aplicativo.</li>
                         </ul>
                 </div>
 

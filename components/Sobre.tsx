@@ -36,11 +36,11 @@ function Sobre() {
            
            <div className='absolute  w-[100%] h-[100%] rounded-full  bg-[#6BA614] top-[2rem] ' >
            <Image
-           src={'/assets/teacherthi.png'}
+           src={'/assets/chefAz.jpg'}
            alt='professor'
            layout='fill'
-           objectFit='contain'
-           className='relative  w-[100%] h-[100%] object-contain'
+           objectFit='cover'
+           className='relative  w-[100%] h-[100%] object-cover rounded-full'
            />
            </div>
          </div>

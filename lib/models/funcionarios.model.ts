@@ -100,6 +100,19 @@ presencas:[
   }
 ],
 
+publicacaoRecreativas:[
+  {
+    type:mongoose.Types.ObjectId, 
+    ref:"ActividadeRecreativa"
+ }
+],
+publicacaoAcademicas:[
+  {
+    type:mongoose.Types.ObjectId, 
+    ref:"ActividadeAcademica"
+ }
+],
+
   createdAt: {
     type: Date,
     default: Date.now,

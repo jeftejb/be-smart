@@ -26,7 +26,7 @@ export default function FormularioDePagamento(
     {id, 
     data, 
     nome,
-   
+    imagem,
     numeroDeEstudante, 
     totalMesesPagos, 
     anoInscricao,    
@@ -44,11 +44,6 @@ export default function FormularioDePagamento(
    //const mesesPagosArrUni = mesesPagosArr.flat()
    const mesesPagosArrUni = mesesPagosArr.length > 0 ? mesesPagosArr.reduce((item:any, id:any)=>{ return item.concat(id) }) : []
    
-
-   
-
-      
-
 
 
     const mesesPagos = [

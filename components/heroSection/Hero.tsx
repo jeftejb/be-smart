@@ -3,15 +3,13 @@ import React from 'react'
 
 function Hero() {
   return (
-    <div className='w-[100%]  flex-col lg:mt-[12px] md:mt-[5px] max-sm:mt-[2px]  relative  items-center justify-center shadow-2xl  h-[50vh] rounded-lg '>
-    <div className='absolute overflow-hidden w-[100%] h-[100%]' >
-    <div className='absolute inline-flex lg:w-[350px] lg:h-[350px] md:w-[300px] md:h-[300px] max-sm:w-[200px] max-sm:h-[200px] -top-20 -left-20 bg-[#03A678]  rounded-full z-10 animate-ping'/>
-     <div className='absolute inline-flex lg:w-[320px] lg:h-[320px] md:w-[300px] md:h-[300px] max-sm:w-[200px] max-sm:h-[200px] -top-40 bg-[#80BF21] rounded-full z-10 animate-ping'/>
-     <div className='absolute inline-flex lg:w-[400px] lg:h-[400px] md:w-[300px] md:h-[300px] max-sm:w-[350px] max-sm:h-[350px] -top-80  bg-[#F2F2F2] rounded-full z-10 animate-ping'/>
+    <div className='w-[100%] max-sm:overflow-hidden  flex-col lg:mt-[12px] md:mt-[5px] max-sm:mt-[2px]  relative  items-center justify-center shadow-2xl  h-[50vh] rounded-lg '>
+    <div className='absolute  w-[100%] h-[100%]' >
+    <div className='absolute inline-flex lg:w-[350px] lg:h-[350px] md:w-[150px] md:h-[150px] max-sm:w-[140px] max-sm:h-[140px] lg:top-20 max-sm:top-20 md:top-28 left-20 md:left-28 bg-[#03A678]  rounded-full z-10 animate-ping'/>
+     <div className='absolute inline-flex lg:w-[220px] lg:h-[220px] md:w-[220px] md:h-[220px] max-sm:w-[200px] max-sm:h-[200px] lg:top-40  max-sm:top-20 md:top-28 md:left-28 bg-[#80BF21] rounded-full z-10 animate-ping'/>
+     <div className='absolute inline-flex lg:w-[150px] lg:h-[150px] md:w-[100px] md:h-[100px] max-sm:w-[80px] max-sm:h-[80px] lg:top-60 md:top-28 md:left-32 max-sm:top-28 left-20 max-sm:left-28  bg-[#F2F2F2] rounded-full z-10 animate-ping'/>
      
-     <div className='absolute inline-flex w-[350px] h-[350px] md:w-[300px] md:h-[300px] max-sm:w-[200px] max-sm:h-[200px] -top-20 -left-20 bg-[#03A678]  rounded-full z-10 '/>
-     <div className='absolute inline-flex w-[320px] h-[320px] md:w-[300px] md:h-[300px] max-sm:w-[220px] max-sm:h-[220px] -top-40 bg-[#80BF21] rounded-full z-10 '/>
-     <div className='absolute inline-flex w-[400px] h-[400px] md:w-[300px] md:h-[300px] max-sm:w-[350px] max-sm:h-[350px] -top-80  bg-[#F2F2F2] rounded-full z-10 '/>
+     
     <Image
     src={'/assets/banner3.png'}
     alt='banner3'
@@ -19,7 +17,7 @@ function Hero() {
      fill
     className='w-[100%] h-[100%] object-cover flex rounded-xl'
     />
-     <div className='absolute flex flex-col w-[500px] h-[500px] left-0 z-30'>
+     <div className='absolute flex flex-col overflow-visible  lg:w-[600px]  lg:h-[550px] md:w-[500px]  md:h-[400px] max-sm:w-[280px]  max-sm:h-[250px] left-0 z-30'>
      <Image
     src={'/assets/imgPri.png'}
     alt='professor'
@@ -29,8 +27,8 @@ function Hero() {
     />
      </div>
 
-     <div className='absolute animate-bounce z-20 w-[200px] bottom-14 bg-[#00303C] left-4 h-[80px] p-2'>
-      <span className=' lg:text-[14px] md:text-[14px] max-sm:[12px] uppercase font-serif'>
+     <div className='absolute animate-bounce z-20 w-[200px]   bottom-14 max-sm:bottom-52 max-sm:left-40 backdrop-blur-md bg-black/20 left-3 h-[80px] p-2'>
+      <span className=' absolute max-sm:right-8 lg:text-[14px] md:text-[14px] max-sm:[12px] uppercase font-serif'>
         Faça parte <br/> 
         <span className='text-[#80BF21] font-semibold'>
         da 

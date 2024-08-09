@@ -25,12 +25,11 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-    <html lang="en">
+    <html lang="pt">
     <head>
 
     </head>
       <body className={`${inter.className} font-primary overflow-x-hidden`}>
-   
         <Nav/>
           <div>
            {/*<Particle/>*/}

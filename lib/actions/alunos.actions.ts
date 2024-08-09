@@ -40,7 +40,8 @@ interface Params {
   mesesDivida:number,
   totalDivida:number, 
   actived:any,
-  modeloDeAprendisagem:string
+  modeloDeAprendisagem:string,
+   
   
 }
 
@@ -76,7 +77,7 @@ export async function fetchAlunoOnb(id: string){
   export  async function fetchAlunNumeroEstudante(nomeUser: string) {
     try {
       await connectToDB();
-      return await Alunos.findOne({numeroDeEstudante:nomeUser}).populate({
+      return await Alunos.findOne({email:nomeUser}).populate({
         path:'propina',
         model:Propina
       });
@@ -100,6 +101,16 @@ export async function fetchAlunoOnb(id: string){
     }
   }
 
+  // busca de todos alunos
+  export async function fetchAlunosAllS() {
+    const  mysort:any = { nomeCompleto: 1 }
+    try {
+      await connectToDB();
+      return await Alunos.find().sort(mysort).select("_id nomeCompleto")
+    } catch (error: any) {
+      throw new Error(`Falha ao buscar alunos: ${error.message}`);
+    }
+  }
   
   export async function fetchAlunosAll() {
     try {
@@ -271,6 +282,63 @@ export async function fetchAlunoOnb(id: string){
      }
    }
 
+
+
+   
+
+   export async function pesquisaNumero({numeroDeEstudante}:{numeroDeEstudante:number}){
+    
+     try {
+       connectToDB();
+     const dados =   await Alunos.findOne(
+         {numeroDeEstudante:numeroDeEstudante}
+       )
+       
+       return{
+        status:200,
+        res:"Estudante encontrado!",
+        dados: {
+          id:dados?._id,
+         nome: dados?.nomeCompleto,
+        email:dados?.email
+        }
+       }
+  
+     } catch (error: any) {
+      return{
+        status:400,
+        res:"Estudante não encontrado!",
+      }
+       
+     }
+   }
+
+   export async function updateAlunoMatriculaEmail({
+    userId,
+    email
+   }: {userId:string, email:string}){
+     try {
+       connectToDB();
+       // const data = new Date(
+ 
+       await Alunos.findOneAndUpdate(
+         { _id: userId },
+         {
+             email:email,
+         }
+       );
+       
+       return{
+        status:200,
+        res:"Confirmação feita com sucesso !",
+       }
+  
+     } catch (error: any) {
+       throw new Error(`Failed to create/update user: ${error.message}`);
+     }
+   }
+
+
    export async function updateAlunoMatricula({
     userId,
     actived
@@ -283,6 +351,7 @@ export async function fetchAlunoOnb(id: string){
          { _id: userId },
          {
              actived,
+             vinculed:false,
          }
        );
        
@@ -323,10 +392,12 @@ export async function fetchAlunoOnb(id: string){
      }
    }
 
+   //pedido de pagamento de propina
+
    export async function UpdatePropinaPedido(
     {
   
-     idPropina,
+     idPropina,//na verdare é o id do aluno
      imagem,
     modeloPagamento,
     meses,
@@ -388,12 +459,70 @@ export async function fetchAlunoOnb(id: string){
     } catch (error: any) {
       throw new Error(`Falha ao criar o pagamento: ${error.message}`);
     }
-  
-  
-    
-  
+      
    }
-  
+
+ // buscar todos os pedidos
+   export async function SelectAllPedidos(){
+    try {
+       const dados = await PropinaPedidoPagamento.find().select("valorPago createDate _id statos").populate({
+          path:"idAluno", 
+          model:Alunos, 
+          select:"nomeCompleto imagem _id"
+        })
+
+        return dados
+
+    } catch (error:any) {
+      throw new Error(error);
+      
+    }
+   }
+
+   //buscar pedido
+
+ 
+   export async function fetchPedido(id:string){
+    try {
+       const dados = await PropinaPedidoPagamento.findOne({_id:id}).populate({
+          path:"idAluno", 
+          model:Alunos, 
+          select:"nomeCompleto imagem _id"
+        })
+
+        return dados
+
+    } catch (error:any) {
+      return{
+        statos:500, 
+        mensagem:"Algo deu errado porfavor tente novamente mais tarde"
+      }
+      
+    }
+   }
+
+   //actualizar statos pedido
+
+   export async function updatePedido({id, dado}:{id:any, dado:string}){
+   const idPedido:string = id?.id
+    try {
+        await PropinaPedidoPagamento.findOneAndUpdate({_id:idPedido },{$set:{statos:dado}})
+
+        return {
+          statos:200,
+          mensagem:"pedido actualizado com sucesso"
+
+        }
+
+    } catch (error:any) {
+      return{
+        statos:500, 
+        mensagem:"Algo deu errado porfavor tente novamente mais tarde"
+      }
+      
+    }
+   }
+
 
  export default async function UpdatePropina(
   {
@@ -441,8 +570,6 @@ export async function fetchAlunoOnb(id: string){
           
         });
 
-        
-    
         return{
           status:200,
           res:"Fatura criada com sucesso",

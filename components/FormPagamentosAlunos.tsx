@@ -20,6 +20,7 @@ interface Props{
     anoConfirmacao: string,
     mesDeConfirmacao: string,
     nome:string,
+    imagem:string
    
 }
 
@@ -27,6 +28,7 @@ export default function FormPagamentosAlunos(
     {id, 
     data, 
     nome,
+    imagem,
     numeroDeEstudante, 
     totalMesesPagos, 
     anoInscricao,    
@@ -149,7 +151,7 @@ export default function FormPagamentosAlunos(
 
    
             const res:any = await UpdatePropinaPedido({
-            idPropina:id,
+            idPropina:id, // na verdade é o id do aluno 
             nome:nome,
             imagem:publicId||"",
             modeloPagamento:dados?.modeloPagamento||"",

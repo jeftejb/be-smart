@@ -49,7 +49,7 @@ function Servicos() {
               Venha aprender de forma interativa, com actividades totalmente personalizadas para sua rapida aprendisagem.
              </p>
 
-             <button onClick={(()=> router.push('/atividades'))} className='px-[1.8rem] rounded-xl mt-4 justify-center hover:bg-green-800 transition-all max-sm:flex max-sm:w-full text-center duration-200 py-[.5rem] text-[14px] font-semibold uppercase bg-[#038C73] text-black flex items-center space-x-2'>
+             <button onClick={(()=> router.push('/actividades/geral'))} className='px-[1.8rem] rounded-xl mt-4 justify-center hover:bg-green-800 transition-all max-sm:flex max-sm:w-full text-center duration-200 py-[.5rem] text-[14px] font-semibold uppercase bg-[#038C73] text-black flex items-center space-x-2'>
          <p className='text-center max-sm:text-[14px]'>
            Saber mais
           </p>

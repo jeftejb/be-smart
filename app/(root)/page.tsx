@@ -10,6 +10,8 @@ import Sobre from "@/components/Sobre";
 import Servicos from "@/components/Servicos";
 import PerfisDeSaida from "@/components/PerfisDeSaida";
 import Funcionarios from "@/components/Funcionarios";
+import SmartDay from "@/components/SmartDay";
+import EspacoEncarregado from "@/components/EspacoEncarregado";
 
 
 
@@ -25,8 +27,10 @@ export default function Home() {
   <div className="relative">
      <Sobre/>
      <Servicos/>
+     <EspacoEncarregado/>
      <PerfisDeSaida/>
      <Funcionarios/>
+     <SmartDay/>
    </div>
     
  

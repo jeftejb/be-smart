@@ -8,9 +8,8 @@ const getData = async (id:string)=>{
      return{data:funcionario}
 }
 
-export default async function page({params}:{params:{id:string}}){
-  const id = params.id;
-  console.log(id)
+export default async function Page({params}:{params:{id:string}}){
+  const id = params.id
 const dados:any = await getData(id)
 
     return(

@@ -24,12 +24,12 @@ export default async function Page({params}:{params:{id:string}}){
 
 
     return( 
-        <div className="w-full top-0 left-0">
-           <div className="w-full mt-[180px] flex flex-col items-center">
-            <div className="relative w-[100%] h-[50vh]">
-            <PerfilItem/>
+        <div className="w-full flex flex-col top-0 left-0">
+           <div className="w-full mt-[180px] flex flex-col pb-[2rem] items-center">
+            <div className="relative w-[100%] h-full">
+            <PerfilItem nome={user?.user.nomeCompleto} email={user?.user.email} cargo ={user?.user.funcoes[0]}/>
             </div>
-                <AdminItem id={params.id}/>
+                <AdminItem id={params.id} nivelDeAcessoAdmin={user?.user.nivel}/>
            </div>
         </div>
          

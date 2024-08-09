@@ -118,7 +118,7 @@ export const meses = [
 
     {mes:"Janeiro", valor:1, sec:1},
     {mes:"Fevereiro", valor:2, sec : 2 },
-    {mes:"Marco", valor:3 , sec:3},
+    {mes:"Março", valor:3 , sec:3},
     {mes:"Abril", valor:4 , sec:4},
     {mes:"Maio", valor:5 , sec:5},
     {mes:"Junho", valor:6 , sec:6},
