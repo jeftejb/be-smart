@@ -19,7 +19,7 @@ async function page(){
          <div className='w-full h-full mt-[2rem] px-[4rem] max-md:px-[.7rem]'>
 
           {
-            actividades.actividades.map((items:any, key:any)=>(
+            actividades?.actividades?.map((items:any, key:any)=>(
               <div key={key} className='w-full flex bg-[#2b2d42] rounded-xl gap-[.5rem]'>
                 <div className='relative w-[60%] h-[200px] max-md:w-[50%] rounded-lg'>
                   <Image

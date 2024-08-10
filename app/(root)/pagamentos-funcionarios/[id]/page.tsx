@@ -16,7 +16,7 @@ const getData = async ()=>{
 export default async function PagamentosFuncionarios({params}:{params:{id:string}}){
    
     const dados:any = await getData()
-    
+    const salario = 1500
 
   
 
@@ -34,7 +34,22 @@ export default async function PagamentosFuncionarios({params}:{params:{id:string
                </div>
                 </div> 
 
-            <div className="relative w-[90%] max-sm:w-[100%] h-full flex flex-col p-8 items-center mt-14 bg-[#09090b] rounded-2xl  ">
+                <div className="w-full p-[2rem] flex flex-row items-center gap-4 justify-center">
+               <button className=" bg-[#0582ca] text-[12px] uppercase p-[1rem] rounded-lg hover:bg-[#2b2d42] duration-75">
+                Pagamento actual 
+               </button>
+               <button className=" bg-[#0582ca] text-[12px] uppercase p-[1rem] rounded-lg hover:bg-[#2b2d42] duration-75">
+                Pagamento mês anterio
+               </button>
+               <button className=" bg-[#0582ca] text-[12px] uppercase p-[1rem] rounded-lg hover:bg-[#2b2d42] duration-75">
+                Historico de pagamento
+               </button>
+               <Link href={`/calendarioSalarial/${params.id}`} className=" bg-[#0582ca] text-[12px] uppercase p-[1rem] rounded-lg hover:bg-[#2b2d42] duration-75">
+                Calendario salarial 
+               </Link>
+                </div>
+
+            <div className="relative w-[90%] max-sm:w-[100%] h-full flex flex-col p-8 items-center mt-7 bg-[#09090b] rounded-2xl gap-[8px] ">
                     
             <div className="w-[100%] flex justify-center items-center p-2">
                 <span className=" font-extralight text-2xl text-gray-300 mt-2">Funcionarios </span>
@@ -62,7 +77,7 @@ export default async function PagamentosFuncionarios({params}:{params:{id:string
                             </Link> 
 
                             <div  className="flex flex-row gap-4">
-                                <p className="text-[12px] font-normal uppercase" >Valor:<span className="font-bold text-yellow-600">36.000,00Kz</span></p>
+                                <p className="text-[12px] font-normal uppercase" >Salario:<span className="font-bold text-yellow-600">{items?.presencas.length * salario}</span></p>
                                 <p className="text-[12px] font-normal uppercase">Mês: <span className="font-bold text-yellow-600" >Maio</span></p>
                                 <p className="text-[12px] font-normal uppercase">Desenho:<span className="font-bold text-yellow-600" >15%</span></p>
                                 <p className="text-[12px] font-normal uppercase">Desconto:<span className="font-bold text-yellow-600" >500,00kz</span></p>
@@ -70,7 +85,7 @@ export default async function PagamentosFuncionarios({params}:{params:{id:string
 
                             <div  className="flex flex-row gap-4">
                             <BFuncionario
-                            id={items._id}
+                            id={JSON.stringify(items._id)}
                             nome={items.nomeCompleto}
                             mes="jknkcjsn"
                             valor="12.000,00"
@@ -78,11 +93,6 @@ export default async function PagamentosFuncionarios({params}:{params:{id:string
                             </div>
                         </div>
                 ))}
-            
-             
-
-             
-
              
            </div>
 

@@ -22,7 +22,7 @@ async function page() {
 
 
    {
-    actividades?.actividade.map((items:any, key:any)=>(
+    actividades?.actividade?.map((items:any, key:any)=>(
       <div key={key} className='w-full h-full flex flex-col  pt-[1rem] mt-[1rem] z-20 mb-[1rem] pb-[.7rem] rounded-xl px-[2rem] max-md:px-[.7rem] bg-[#2b2d42]'>
       <div className='w-full h-[45vh] gap-[1rem] max-md:gap-[.5rem] grid grid-cols-2 max-md:grid-cols-1'>
         <div className="grid grid-rows-6 max-md:grid-rows-10 grid-flow-col gap-[.3rem]">

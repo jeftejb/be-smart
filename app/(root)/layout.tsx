@@ -27,7 +27,7 @@ export default function RootLayout({
     <ClerkProvider>
     <html lang="pt">
     <head>
-
+      <title>Be-Smart</title>
     </head>
       <body className={`${inter.className} font-primary overflow-x-hidden`}>
         <Nav/>

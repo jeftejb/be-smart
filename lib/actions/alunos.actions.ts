@@ -8,8 +8,10 @@ import Propina from "../models/propina.model";
 import { connectToDB } from "../mongoose";
 import Swal from "sweetalert2";
 import mongoose from "mongoose";
-import PropinaPedidoPagamento from "../models/propinaPedidoPagamento.model";
+
 import { create } from "domain";
+import Encarregado from "../models/encarregado.model";
+import PropinaPedidoPagamento from "../models/propinaPedidoPagamento.model";
 
 
 interface Params {
@@ -465,14 +467,9 @@ export async function fetchAlunoOnb(id: string){
  // buscar todos os pedidos
    export async function SelectAllPedidos(){
     try {
-       const dados = await PropinaPedidoPagamento.find().select("valorPago createDate _id statos").populate({
-          path:"idAluno", 
-          model:Alunos, 
-          select:"nomeCompleto imagem _id"
-        })
-
+      connectToDB()
+       const dados = await PropinaPedidoPagamento.find()
         return dados
-
     } catch (error:any) {
       throw new Error(error);
       
@@ -484,12 +481,9 @@ export async function fetchAlunoOnb(id: string){
  
    export async function fetchPedido(id:string){
     try {
-       const dados = await PropinaPedidoPagamento.findOne({_id:id}).populate({
-          path:"idAluno", 
-          model:Alunos, 
-          select:"nomeCompleto imagem _id"
-        })
-
+      connectToDB()
+       const dados = await PropinaPedidoPagamento.findOne({_id:id})
+          
         return dados
 
     } catch (error:any) {
@@ -514,6 +508,7 @@ export async function fetchAlunoOnb(id: string){
 
         }
 
+        
     } catch (error:any) {
       return{
         statos:500, 

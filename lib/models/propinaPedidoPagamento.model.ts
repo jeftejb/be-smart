@@ -1,67 +1,29 @@
 import mongoose from "mongoose";
 
 const propinaPedidoPagamentoSchema = new mongoose.Schema({
-  id:{
-    type: String,
-  },
-  
-  nome:String,
-  idAluno:{
-    type:mongoose.Schema.ObjectId,
-    ref:"Alunos",
-  },
-
+  nomeEncarregado:String,
+  imagem:String,
+  total:Number,
   encarregado:{
     type:mongoose.Schema.ObjectId,
     ref:"Encarregado",
   },
- 
-  modeloPagamento:{
-    type:String
-  },
-  imagem:String,
-  valor:{
-    type:Number, 
-    default:0
-  },
-  valorPago:Number,
-  meses:[], 
-  anoConfirmacao:Number,
-  totalMesesPagos:[],
- 
-  mesesDivida:Number,
-  totalDivida: Number,
-
-
-  numeroEstudante:Number, 
-
   statos:{
     type:String, 
     default:"Em analise"
-  },
- 
+  },  
   morStudant:[
      {
-      nome:String,
+      nomeAluno:String,
       idAluno:{
         type:mongoose.Schema.ObjectId,
         ref:"Alunos",
       },
-      modeloPagamento:{
-        type:String
-      },
-      valor:{
-        type:Number, 
-        default:0
-      },
-      valorPago:Number,
-      meses:[], 
-      anoConfirmacao:Number,
-      totalMesesPagos:[],
-      mesesDivida:Number,
-      totalDivida: Number,
-      numeroEstudante:Number, 
-    
+      meses:[],
+      mesesValor:[], 
+      idade:Number, 
+      mensalidade:Number,
+      valorTotalPago:Number
      }
 
   ],
@@ -70,10 +32,8 @@ const propinaPedidoPagamentoSchema = new mongoose.Schema({
     type:Date, 
     default: Date.now
   }
-
-  
- 
 });
+
 
 const PropinaPedidoPagamento = mongoose.models.PropinaPedidoPagamento || mongoose.model("PropinaPedidoPagamento", propinaPedidoPagamentoSchema);
 
