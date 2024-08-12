@@ -290,7 +290,7 @@ export default function FormPagamentosAlunos(
                     </div>
               
 
-                <button type="submit" className="px-5 py-2 border border-green-600  text-white mt-2 hover:bg-green-500  ">Efectuar pagamento</button>
+                <button type="submit" className="px-5 py-2 border border-green-600  text-white mt-2 hover:bg-green-500  ">Efectuar Pedido pagamento</button>
 
                 <div className="flex  w-[100%] h-[100px] lg:text-[14px] md:text-[12px] max-sm:text-[14px] font-bold uppercase items-center justify-center ">
                     <div className="relative flex flex-col   w-[100%]  items-center justify-center text-center" >

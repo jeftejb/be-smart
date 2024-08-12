@@ -21,7 +21,8 @@ const getDados = async(id:string)=>{
 const page = async ({params}:{params:{id:string}})=>{
     const id = params?.id
     const dados:any = await getDados(id)
-    const lista = [1,2,3,4,5]
+    
+   
     return(
            
         
@@ -147,11 +148,11 @@ const page = async ({params}:{params:{id:string}})=>{
                     <div className="mt-[12px] p-[24px]  max-sm:p-[8px] m-[1rem] gap-2 w-[100%]   ">
                             <ul className="relative items-center p-[42px] max-sm:p-[18px] pag-4  justify-start flex flex-col w-[100%] h-[500px] overflow-y-scroll overflow-x-hidden ">
                               
-                               { lista.map((item)=>(
-                                <li key={item} className="relative flex flex-col w-[100%]  my-2 h-[150px] ">
+                               { dados?.alunoInfo?.propina.map((item:any, key:any)=>(
+                                <li key={key} className="relative flex flex-col w-[100%]  my-2 h-[150px] ">
                                     <div className="relative flex w-full h-full bg-gray-900 rounded-tr-3xl rounded-r-xl rounded-l-xl overflow-hidden gap-2 ">
                                         <div className="absolute flex right-0 h-[30px] w-[120px] bg-white items-center justify-center">
-                                        <h5 className="text-black text-[12px] font-bold">Kz:<span>36.000,00</span></h5>
+                                        <h5 className="text-black text-[12px] font-bold">Kz:<span>{item?.valorPago}</span></h5>
                                         </div>
                                         <div className=" relative lg:w-[300px] lg:h-[300px] md:w-[180px] md:h-[180px] max-sm:w-[100px] max-sm:h-[80px]  rounded-tr-3xl rounded-r-3xl ">
                                             <Image
@@ -163,7 +164,7 @@ const page = async ({params}:{params:{id:string}})=>{
                                         </div>
 
                                         <div className="relative mt-[1.5rem] max-sm:mt-[1rem]">
-                                            <h1 className="text-[18px] max-sm:text-[14px] font-bold">Titulo</h1>
+                                            <h1 className="text-[18px] max-sm:text-[14px] font-bold">{item.nome}</h1>
                                             <p className="max-sm:text-[10px] text-[12px] font-semibold ">Pagamento de propina</p>
                                         
                                         </div>
@@ -174,12 +175,12 @@ const page = async ({params}:{params:{id:string}})=>{
                                     </div>
                                     <div className="relative flex justify-between mt-4  w-full h-8">
                                             <div>
-                                        <p  className="max-sm:text-[10px] text-[12px] font-semibold"> Data: <span>2/10/2023</span></p>
+                                        <p  className="max-sm:text-[10px] text-[12px] font-semibold"> Data: <span>{JSON.stringify(item.createDate)}</span></p>
                                             </div>
 
                                             <div className="relative flex px-4  items-center justify-center gap-2 ">
                                             <div className="absolute flex  w-full h-full rounded-xl  bg-green-500 brightness-50"/>
-                                                <h1 className=" relative overflow-visible text-[12px] font-semibold">Pendente</h1>
+                                             
                                                 <div className="relative rounded-full w-[12px] h-[12px] bg-orange-500 "/>
                                                 
                                             </div>
@@ -246,7 +247,7 @@ const page = async ({params}:{params:{id:string}})=>{
                     </div>
 
                     <div className="absolute bottom-0 w-[100%] h-[100px] bg-white/30 backdrop-blur-2xl hover:bg-green-800 p-4 flex items-center justify-center text-center ">
-                   <Link href={`/perfil/propina/${dados.alunoInfo?._id} `} className="w-[100%] h-[100%]">
+                   <Link href={'#'/** `/perfil/propina/${dados.alunoInfo?._id} `*/} className="w-[100%] h-[100%]">
                    <span>Enviar </span> 
                     </Link>
                     </div>
@@ -254,7 +255,7 @@ const page = async ({params}:{params:{id:string}})=>{
             </div>
 
 
-            <Link href={`/perfil/propina/${id}}`} className=" relative w-full h-[450px] hover:scale-110 duration-100 rounded-tl-3xl rounded-tr-3xl">
+            <Link href={'#'/**`/perfil/propina/${id}}`*/} className=" relative w-full h-[450px] hover:scale-110 duration-100 rounded-tl-3xl rounded-tr-3xl">
                     <div className="absolute w-full h-full rounded-tr-3xl rounded-tl-3xl items-center justify-center uppercase brightness-[0.2] ">
                         <Image
                         src={'/assets/fundo.jpg'}
@@ -298,7 +299,7 @@ const page = async ({params}:{params:{id:string}})=>{
         
                 </Link>
 
-                <Link href={`/perfil/propina/${id}}`} className=" relative w-full h-[450px] hover:scale-110 duration-100 rounded-tl-3xl rounded-tr-3xl">
+                <Link href={"#"/**`/perfil/propina/${id}}` */} className=" relative w-full h-[450px] hover:scale-110 duration-100 rounded-tl-3xl rounded-tr-3xl">
                     <div className="absolute w-full h-full rounded-tr-3xl rounded-tl-3xl brightness-[0.2] ">
                         <Image
                         src={'/assets/fundo.jpg'}

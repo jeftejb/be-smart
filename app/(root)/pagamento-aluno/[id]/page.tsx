@@ -28,7 +28,7 @@ export default async function PagamentoAluno({params}:{params:{id:string}}){
             <div className="relative w-[100%]  bg:h-[100vh] md:h-[100%] max-sm:h-[100%]  bg-[#00303C] flex flex-col mt-[100px] lg:px-[12px] md:px-[12px]  max-sm:px-[4px] py-[28px] items-center justify-center ">
                 <h1 className="text-center mt-[50px] mb-[30px]">Pagamento de Propinas</h1>
 
-                <Link href={`/kistotico-de-pagamentos-aluno`} className="px-[20px] py-[2px] bg-green-500 rounded-2xl mb-[20px]">Historico de pagamentos</Link>
+                {/**<Link href={`/histotico-de-pagamentos-aluno`} className="px-[20px] py-[2px] bg-green-500 rounded-2xl mb-[20px]">Historico de pagamentos</Link>*/}
                
                   <div className="grid lg:grid-cols-2  w-[100%] h-[100%] md:grid-cols-1 max-sm:grid-cols-1 gap-[2rem]  lg:p-[3rem] md:p-[2rem] max-sm:p-[0.5rem]">
                      <div className="bg-[#038C73] flex flex-col w-[100%] h-[100%]  max-sm:px-3 items-center shadow-2xl shadow-black rounded-2xl ">
