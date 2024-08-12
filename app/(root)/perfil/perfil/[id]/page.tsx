@@ -89,12 +89,12 @@ export default async function Page({params}:{params:{id:string}}){
                                     <h1>Aulas</h1>
                                     <span className="text-xl text-green-600">0</span>
                                 </div>
-                                <Link href={`/perfil/atividades/${user?.id}`} className="w-full h-[35px] ">
+                          
                                 <div className="w-full flex rounded-lg flex-row h-[35px] p-2 gap-2  border-2 border-gray-400 items-center justify-center bg-gray-900 hover:scale-105 duration-75 ">
                                     <h1>Actividades</h1>
                                     <span className="text-xl text-green-600">0</span>
                                 </div>
-                                </Link>
+                               
                                 <Link href={`/perfil/estudante/${user?._id}`} className="w-full h-[35px] ">
                                 <div className="w-full flex rounded-lg flex-row h-[35px] p-2 gap-2  border-2 border-gray-400 items-center justify-center bg-gray-900 hover:scale-105 duration-75 ">
                                     <h1>Perfil academico</h1>

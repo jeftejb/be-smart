@@ -22,7 +22,7 @@ export default function Footer(){
             </div>
             <div >
                 <h1 className="text-[20px] mb-[0.2rem] font-semibold text-white " >Telefone</h1>
-                <p className="text-[15px] w-[90%] text-white opacity-60" >+244 xxx xxx xxx ou +244 xxx xxx xxx xxx</p>
+                <p className="text-[15px] w-[90%] text-white opacity-60" >+244 939 728 990 / +244 934 225 963</p>
             </div>
            </div>
 
@@ -32,7 +32,7 @@ export default function Footer(){
             </div>
             <div >
                 <h1 className="text-[20px] mb-[0.2rem] font-semibold text-white " >Envianos um email</h1>
-                <p className="text-[15px] w-[90%] text-white opacity-60">besmartsmart@gmail.com</p>
+                <p className="text-[15px] w-[90%] text-white opacity-60">smartbesmart45@gmail.com</p>
             </div>
            </div>
         </div>

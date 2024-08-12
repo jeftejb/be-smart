@@ -12,6 +12,8 @@ import PerfisDeSaida from "@/components/PerfisDeSaida";
 import Funcionarios from "@/components/Funcionarios";
 import SmartDay from "@/components/SmartDay";
 import EspacoEncarregado from "@/components/EspacoEncarregado";
+import Propinas from "@/components/propinas/Propinas";
+import Numeros from "@/components/numeros/Numeros";
 
 
 
@@ -29,7 +31,9 @@ export default function Home() {
      <Servicos/>
      <EspacoEncarregado/>
      <PerfisDeSaida/>
+     <Propinas/>
      <Funcionarios/>
+     <Numeros/>
      <SmartDay/>
    </div>
     

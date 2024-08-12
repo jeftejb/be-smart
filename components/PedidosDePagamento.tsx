@@ -28,7 +28,7 @@ function PedidosDePagamento({dados}:{dados:string}) {
   return (
     <div className='flex flex-col items-center justify-center  w-[100%] '>
     <div className="w-[100%] flex flex-col justify-center items-center gap-4 p-2">
-    <span className=" font-extralight text-2xl text-gray-300 mt-2">Pedidos de pagamento de propina : {dadosPedido.length}</span>
+    <span className=" font-extralight text-2xl text-gray-300 mt-2">Pedidos de pagamento de propina : {dadosPedido.length} </span>
 
     <div className='flex items-center justify-center  w-[100%] gap-4 p-[2rem]'>
       <button type='button' onClick={(()=>setStatosExibir(false))} className='px-[2rem] hover:bg-white/70 py-[.5rem] bg-white/30 backdrop-blur-lg text-[12px] font-semibold uppercase rounded-lg' >Recentes</button>

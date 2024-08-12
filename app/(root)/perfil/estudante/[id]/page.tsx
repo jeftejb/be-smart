@@ -3,7 +3,7 @@ import { BookOpenIcon, BookmarkIcon, ClipboardDocumentCheckIcon, CurrencyDollarI
 
 import Image from "next/image"
 import Link from "next/link"
-import { classNames } from "uploadthing/client";
+
 
 
 const getDados = async(id:string)=>{
