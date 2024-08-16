@@ -3,10 +3,16 @@ const nextConfig = {
     typescript:{
       ignoreBuildErrors:true,
     },
+  
     experimental: {
       //serverActions: true,
       //taint: true,
-      serverComponentsExternalPackages: ["mongoose"],
+      serverActions:{
+         bodySizeLimit:"4MB",
+        serverComponentsExternalPackages: ["mongoose"],
+      }
+    
+      
     },
      
       eslint: {

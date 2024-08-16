@@ -19,7 +19,7 @@ export default function FormCadFun({id}:Props){
     }
 
     const handelSubmit = async (e:any)=>{
-      
+      e.preventDefault()
 
        await updateFuncionario(
         {

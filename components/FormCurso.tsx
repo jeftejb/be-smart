@@ -28,7 +28,7 @@ interface Props{
 function FormCurso({id ,items, nome, imagem , descricao}:Props) {
   const pathname = usePathname();
     const [files, setFiles] = useState<File[]>([]);
-    const { startUpload } = useUploadThing("media");
+    const { startUpload } = useUploadThing<any>("media");
     const router = useRouter()
 
     const professores:any = JSON.parse(items) 
